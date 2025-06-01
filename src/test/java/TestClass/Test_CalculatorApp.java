@@ -36,4 +36,44 @@ public class Test_CalculatorApp {
     public void testDivideByZero() {
         assertThrows(ArithmeticException.class, () -> calc.divide(1, 0));
     }
+
+    @Test
+    public void testModulus() {
+        assertEquals(1, calc.modulus(7, 3));
+    }
+
+    @Test
+    public void testModulusByZero() {
+        assertThrows(ArithmeticException.class, () -> calc.modulus(7, 0));
+    }
+
+    @Test
+    public void testSquare() {
+        assertEquals(16, calc.square(4));
+    }
+
+    @Test
+    public void testPower() {
+        assertEquals(8.0, calc.power(2, 3));
+    }
+
+    @Test
+    public void testSqrt() {
+        assertEquals(5.0, calc.sqrt(25));
+    }
+
+    @Test
+    public void testSqrtNegative() {
+        assertThrows(ArithmeticException.class, () -> calc.sqrt(-1));
+    }
+
+    @Test
+    public void testIsEven() {
+        assertTrue(calc.isEven(4));
+    }
+
+    @Test
+    public void testIsOdd() {
+        assertTrue(calc.isOdd(7));
+    }
 }
